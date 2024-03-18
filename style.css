@@ -1,0 +1,23 @@
+html {
+  background: linear-gradient(#615dad 0%, #ffc8da 100%);
+  height: 100%;
+
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.body {
+  background-color: #283e50;
+  color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  max-width: 340px;
+  border-radius: 15px 15px 0 0;
+
+}
