@@ -14,46 +14,52 @@ html {
   margin-top: 70px;
   display: flex;
   justify-content: center;
+
 }
 
 .card {
   width: 330px;
   height: 500px;
   margin: 0;
-  font-size: 15;
   flex-basis: 300px;
   background-color: #283e50;
   text-align: center;
+  border-radius: 10px 10px;
+
 }
 
 .picture {
   width: 100%;
-  border-radius: 10px;
+  border-radius: 10px 10px 0 0;
+
 }
 
 .card_title {
   font-family: "Lobster", cursive;
   color: white;
   font-size: 2.5rem;
+  margin: 15px;
+
+
 }
 
 .card_text {
   color: white;
-  margin-bottom: 20px;
   margin: 8px;
+  font-family: sans-serif;
+  font-size: 15px;
+  margin-top: 20px;
+  line-height: 1.4;
+  margin-bottom: 20px;
 
 }
-
-
-
 
 .card_footer {
 
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-
-
+  gap: 1px;
 
 
 }
@@ -61,29 +67,33 @@ html {
 
 .card_button1 {
   background-color: #1fcca4;
-  height: 36px;
-
+  padding: 12px 0;
 
 
 }
 
+.card_button1:hover {
+  background-color: #1cbb96;
+}
 
 .card_button2 {
   background-color: #0197f6;
-  height: 36px;
+  padding: 12px 0;
+
+
 
 }
 
+.card_button2:hover {
+  background-color: #0090e9;
+}
+
 a {
-
-
+  padding: 8px 0;
   text-decoration: none;
   color: white;
   text-align: center;
   font-size: 18px;
+  font-family: sans-serif;
 
-}
-
-.a:hover {
-  color: ;
 }
