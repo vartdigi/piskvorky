@@ -12,7 +12,11 @@ Na tomto projektu budete pracovat postupně v pěti postupně navazujících úk
 Zadání jednotlivých úkolů jsou zde:
 
  https://github.com/Czechitas-podklady-WEB/ukol-piskvorky-1/
+ 
  https://github.com/Czechitas-podklady-WEB/ukol-piskvorky-2/
+ 
  https://github.com/Czechitas-podklady-WEB/ukol-piskvorky-3/
+ 
  https://github.com/Czechitas-podklady-WEB/ukol-piskvorky-4/
+ 
  https://github.com/Czechitas-podklady-WEB/ukol-piskvorky-5/
