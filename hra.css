@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+
+html {
+  background: linear-gradient(#615dad 0%, #fabdd2 100%);
+  height: 100%;
+}
+
+
+
+.card_title2 {
+  font-family: "Lobster", cursive;
+  color: white;
+  font-size: 3rem;
+  margin: -1px;
+  text-align: center;
+}
+
+.main_contejner {
+  max-width: 80vmin;
+  margin: auto;
+  margin-bottom: 3px;
+}
+
+.main_line {
+  display: flex;
+}
+
+
+p {
+  margin: 0;
+  color: azure;
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+  margin-right: 10px
+}
+
+.player {
+  display: flex;
+  align-items: center;
+
+}
+
+.main_buttons {
+
+  margin-left: auto;
+
+}
+
+.home {
+  background-color: #1fcca4;
+  width: 20px;
+  height: 25px;
+  border-radius: 5px 5px 5px 5px;
+  padding: 5px 5px 5px 5px;
+
+
+}
+
+.icon-button1 {
+  text-decoration-line: none;
+}
+
+.icon-button1 :hover {
+  background-color: #1cbb96;
+
+}
+
+.restart {
+
+  background-color: #0197f6;
+  width: 20px;
+  height: 25px;
+  border-radius: 5px 5px 5px 5px;
+  padding: 5px 5px 5px 5px;
+}
+
+.icon-button2 :hover {
+  background-color: #0090e9;
+
+
+}
+
+
+/*--zacina hlavni pole pro hrani--- */
+
+
+.main_area {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 80vmin;
+  margin: auto;
+  border: 1px solid black;
+
+
+
+}
+
+.button-hra {
+  opacity: 0.5;
+  width: calc(80vmin / 10);
+  height: calc(80vmin / 10);
+  margin: 0;
+  padding: 0;
+  border: 1px solid black;
+
+}
+
+
+/*--hlavni pole pri funkce hover--- */
+.button-hra:hover {
+  background-color: rgb(255, 255, 255);
+  cursor: pointer;
+}
+
+.button-hra:focus {
+  background-color: aliceblue;
+
+}
