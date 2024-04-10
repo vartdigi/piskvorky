@@ -116,7 +116,7 @@ p {
 .button-hra__circle,
 .button-hra__circle:focus,
 .button-hra__circle:hover {
-  background-image: url(icons/circle.svg);
+  background-image: url(icons/circleblack.svg);
   background-attachment: initial;
   background-size: 65%;
   background-repeat: no-repeat;
@@ -128,7 +128,7 @@ p {
 .button-hra__cross,
 .button-hra__cross:focus,
 .button-hra__cross:hover {
-  background-image: url(icons/cross.svg);
+  background-image: url(icons/crossblack.svg);
   background-attachment: initial;
   background-size: 65%;
   background-repeat: no-repeat;
@@ -137,13 +137,6 @@ p {
   animation-duration: 0.15s;
 }
 
-.button-hra__circle::before {
-  background-image: url('icons/circle-black.svg');
-}
-
-.button-hra__cross::before {
-  background-image: url('icons/cross-black.svg');
-}
 
 @keyframes example {
   0% {
