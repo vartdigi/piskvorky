@@ -85,16 +85,12 @@ p {
 
 /*--zacina hlavni pole pro hrani--- */
 
-
 .main_area {
   display: flex;
   flex-wrap: wrap;
   max-width: 80vmin;
   margin: auto;
   border: 1px solid black;
-
-
-
 }
 
 .button-hra {
@@ -104,17 +100,57 @@ p {
   margin: 0;
   padding: 0;
   border: 1px solid black;
-
+  position: relative;
+  overflow: hidden;
 }
-
 
 /*--hlavni pole pri funkce hover--- */
-.button-hra:hover {
-  background-color: rgb(255, 255, 255);
+.button-hra:hover,
+.button-hra:focus {
   cursor: pointer;
+  background: linear-gradient(#8581b9, #f3d9e2) fixed;
 }
 
-.button-hra:focus {
-  background-color: aliceblue;
+/*----při hře kolečko a křížek */
 
+.button-hra__circle,
+.button-hra__circle:focus,
+.button-hra__circle:hover {
+  background-image: url(icons/circle.svg);
+  background-attachment: initial;
+  background-size: 65%;
+  background-repeat: no-repeat;
+  background-position: center;
+  animation: example;
+  animation-duration: 0.15s;
+}
+
+.button-hra__cross,
+.button-hra__cross:focus,
+.button-hra__cross:hover {
+  background-image: url(icons/cross.svg);
+  background-attachment: initial;
+  background-size: 65%;
+  background-repeat: no-repeat;
+  background-position: center;
+  animation: example;
+  animation-duration: 0.15s;
+}
+
+.button-hra__circle::before {
+  background-image: url('icons/circle-black.svg');
+}
+
+.button-hra__cross::before {
+  background-image: url('icons/cross-black.svg');
+}
+
+@keyframes example {
+  0% {
+    background-size: 0%;
+  }
+
+  100% {
+    background-size: 65%;
+  }
 }
