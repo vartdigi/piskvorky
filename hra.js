@@ -2,55 +2,54 @@ import { findWinner } from 'https://unpkg.com/piskvorky@0.1.4';
 
 //ADD CLASS FOR BUTTONS
 let currentPlayer = 'circle';
-const buttons = document.querySelectorAll('button');
 
 //SELECT BUTTONS
 const selectBtn = (evt) => {
-  const index = Array.from(buttons).indexOf(evt.target);
-  const currentPlayerIcon = document.querySelector('.player img');
+  evt.target.disabled = true;
 
-  if (buttonsArray[index] === '_') {
-    evt.target.disabled = true;
-    if (currentPlayer === 'circle') {
-      currentPlayer = 'cross';
-      evt.target.classList.add('button-hra__cross');
-      currentPlayerIcon.src = 'icons/circle.svg';
-      buttonsArray[index] = 'x';
-    } else {
-      currentPlayer = 'circle';
-      evt.target.classList.add('button-hra__circle');
-      currentPlayerIcon.src = 'icons/cross.svg';
-      buttonsArray[index] = 'o';
-    }
-  }
-};
-
-//ARRAY
-
-const buttonsArray = Array.from(buttons).map((item) => {
-  if (item.classList.contains('button-hra__cross')) {
-    return 'x';
-  } else if (item.classList.contains('button-hra__circle')) {
-    return 'o';
+  if (currentPlayer === 'circle') {
+    evt.target.classList.add('button-hra__cross');
+    currentPlayer = 'cross';
+    document.getElementById('current-player').src = 'icons/circle.svg';
   } else {
-    return '_';
-  }
-});
+    evt.target.classList.add('button-hra__circle');
+    currentPlayer = 'circle';
 
-//WINNER
-const vraceniViteze = () => {
-  const vitez = findWinner(buttonsArray);
-  if (vitez === 'o' || vitez === 'x') {
+    document.getElementById('current-player').src = 'icons/cross.svg';
+  }
+
+  //ARRAY
+  const buttonsArray = Array.from(buttons);
+  const buttonsArraySymbols = buttonsArray.map((item) => {
+    if (item.classList.contains('button-hra__cross')) {
+      return 'x';
+    } else if (item.classList.contains('button-hra__circle')) {
+      return 'o';
+    } else {
+      return '_';
+    }
+  });
+
+  //WINNER
+
+  const vitez = findWinner(buttonsArraySymbols);
+
+  const alertM = () => {
     alert(`HURA!!Vyhrál hráč "${vitez}"!`);
     location.reload();
+  };
+  if (vitez === 'o' || vitez === 'x') {
+    setTimeout(alertM, 250);
   } else if (vitez === 'tie') {
-    alert('Hra skončila nerozhodná.');
+    setTimeout(() => {
+      alert('Hra skončila nerozhodná.');
+      location.reload();
+    }, 250);
   }
-
-  setTimeout(vraceniViteze, 500);
 };
 
 //USE "selectBtn" FUNCTION FOR ALL BUTTONS
+const buttons = document.querySelectorAll('button');
 
 buttons.forEach((button) => {
   button.addEventListener('click', selectBtn);
@@ -73,4 +72,3 @@ document.querySelector('.icon-button2').addEventListener('click', (event) => {
     event.preventDefault();
   }
 });
-vraceniViteze();
