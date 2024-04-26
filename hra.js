@@ -6,7 +6,6 @@ let currentPlayer = 'circle';
 //SELECT BUTTONS
 const selectBtn = (evt) => {
   evt.target.disabled = true;
-
   if (currentPlayer === 'circle') {
     evt.target.classList.add('button-hra__cross');
     currentPlayer = 'cross';
@@ -46,14 +45,32 @@ const selectBtn = (evt) => {
       location.reload();
     }, 250);
   }
+  if (currentPlayer === 'cross') {
+    const response = fetch(
+      'https://piskvorky.czechitas-podklady.cz/api/suggest-next-move',
+      {
+        method: 'POST',
+        headers: {
+          'Content-type': 'application/json',
+        },
+        body: JSON.stringify({
+          board: buttonsArraySymbols,
+          player: 'x',
+        }),
+      },
+    );
+
+    response
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        console.log(data);
+        const index = data.position.x + data.position.y * 10;
+        buttons[index].click();
+      });
+  }
 };
-
-//USE "selectBtn" FUNCTION FOR ALL BUTTONS
-const buttons = document.querySelectorAll('button');
-
-buttons.forEach((button) => {
-  button.addEventListener('click', selectBtn);
-});
 
 //CONFIRMATION
 
@@ -71,4 +88,11 @@ document.querySelector('.icon-button2').addEventListener('click', (event) => {
   ) {
     event.preventDefault();
   }
+});
+
+//USE "selectBtn" FUNCTION FOR ALL BUTTONS
+
+const buttons = document.querySelectorAll('button');
+buttons.forEach((button) => {
+  button.addEventListener('click', selectBtn);
 });
